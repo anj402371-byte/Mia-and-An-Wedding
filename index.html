@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mia & An — Thiệp cưới</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#fffaf5;--accent:#b8860b;--text:#4b3a2a;--muted:#7b6a5a;--soft-pink:#d4a798;--soft-brown:#8b7355}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;font-family:'Cormorant Garamond',serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;font-weight:400}
+  .wrap{max-width:920px;margin:0 auto;padding:18px}
+  .card{background:linear-gradient(180deg,#fff,#fff7f0);border-radius:16px;padding:18px;box-shadow:0 10px 30px rgba(11,9,8,0.06);border:1px solid rgba(11,9,8,0.03)}
+
+  /* Open screen */
+  .open-screen{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+  .open-title{font-family:'Great Vibes',cursive;font-size:42px;color:var(--accent);margin-bottom:8px}
+  .open-sub{color:var(--muted);margin-bottom:16px}
+  .open-btn{background:var(--accent);color:#fff;padding:12px 22px;border-radius:30px;border:0;font-weight:700;cursor:pointer;box-shadow:0 8px 20px rgba(184,134,11,0.12);font-family:'Cormorant Garamond',serif;font-size:16px}
+
+  /* hero */
+  .hero{margin-top:8px}
+  .hero-hero{width:100%;height:500px;border-radius:12px;overflow:hidden;position:relative;background:#f0f0f0}
+  .hero-hero img{width:100%;height:100%;object-fit:cover;display:block}
+
+  h1.big{font-family:'Great Vibes',cursive;font-size:42px;color:var(--accent);text-align:center;margin:14px 0;font-style:normal}
+
+  /* info */
+  .info{text-align:center;padding:8px}
+  .names-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 20px;
+  }
+  .names-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+    font-family:'Cormorant Garamond',serif;
+    color:var(--soft-brown);
+    font-size:26px;
+    font-weight:600;
+    line-height:1.3
+  }
+  .names-separator{
+    font-family:'Cormorant Garamond',serif;
+    font-size:24px;
+    color:var(--soft-pink);
+    margin:0 12px;
+    font-weight:500;
+    width: 24px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .info-content {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #5a4a3a;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  .highlight{font-weight:700;color:var(--text)}
+  .lunar-date{font-style:italic;font-size:16px;color:var(--muted);margin-top:2px;font-family:'Cormorant Garamond',serif}
+  .map-container{display:flex;align-items:center;justify-content:center;gap:15px;margin-top:10px;flex-wrap:wrap}
+
+  /* stagger photos */
+  .stagger{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 18px;
+  }
+
+  .photo-box{
+    width: 700px;
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+    border: 2px solid rgba(184,134,11,0.1);
+  }
+
+  .photo-box img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* families */
+  .families{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;justify-content:center}
+  .side{flex:1;min-width:220px;padding:12px;background:rgba(184,134,11,0.04);border-radius:8px;text-align:center;border:1px solid rgba(184,134,11,0.08);font-family:'Cormorant Garamond',serif;font-size:18px}
+  .side h4{color:var(--accent);margin:6px 0;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600}
+
+  /* announce */
+  .announce{text-align:center;padding:14px;margin-top:14px;border-radius:10px;background:linear-gradient(180deg,#fff9f1,#fff6ea);border:1px solid rgba(184,134,11,0.06);font-family:'Cormorant Garamond',serif}
+  .announce-time{font-style:italic;margin-top:8px;color:var(--muted);font-family:'Cormorant Garamond',serif}
+
+  /* calendar */
+  .calendar{margin-top:16px;padding:12px;border-radius:10px;background:rgba(11,9,8,0.02);display:flex;flex-direction:column;align-items:center;font-family:'Cormorant Garamond',serif}
+  .calendar-title{font-weight:700;margin-bottom:10px;font-size:20px}
+  .weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 8px;
+    max-width: 300px;
+    width: 100%;
+  }
+  .weekday {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:8px;max-width:300px;width: 100%;}
+  .cell{width:35px;height:35px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--muted);background:#fff;font-size:14px;border:1px solid rgba(184,134,11,0.1);font-family:'Cormorant Garamond',serif}
+  .cell.heart{background:linear-gradient(135deg, #ff9a9e, #fad0c4);color:#e74c3c;font-weight:700;border:2px solid #e74c3c;position:relative}
+  .cell.heart::after{content:"❤";position:absolute;font-size:16px}
+
+  /* rsvp */
+  .rsvp{margin-top:18px;padding:12px;border-radius:10px;background:#fff;border:1px solid rgba(11,9,8,0.03);display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center;font-family:'Cormorant Garamond',serif}
+  .rsvp .btn{display:inline-block;padding:10px 20px;border-radius:8px;background:var(--accent);color:#fff;font-weight:700;text-align:center;text-decoration:none;min-width:120px;font-family:'Cormorant Garamond',serif;cursor:pointer;border:none;font-size:16px;}
+  .rsvp .btn.no{background:#fff;color:var(--accent);border:1px solid rgba(184,134,11,0.12)}
+
+  /* gallery */
+  .gallery{display:flex;flex-direction:column;gap:15px;margin-top:14px}
+  .gallery-item{width:100%;height:280px;border-radius:12px;overflow:hidden;background:#f9f9f9}
+  .gallery-item img{width:100%;height:100%;object-fit:contain;display:block}
+
+  footer{text-align:center;margin-top:16px;color:var(--muted);padding-bottom:30px;font-family:'Cormorant Garamond',serif}
+
+  /* hearts animation */
+  .hearts{position:fixed;left:0;right:0;top:0;bottom:0;pointer-events:none;overflow:hidden;z-index:1000}
+  .heart{
+    position:absolute;
+    font-weight:bold;
+    text-shadow: 0 2px 10px rgba(255,0,0,0.3);
+  }
+
+  /* Animation for scroll elements */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .scroll-animate.right {
+    transform: translateX(50px);
+  }
+  
+  .scroll-animate.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Invite line */
+  .invite-line{
+    text-align: center;
+    font-weight: 700;
+    margin: 25px auto;
+    color: var(--accent);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    padding: 15px 0;
+    width: 100%;
+    display: block;
+  }
+
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background-color: var(--bg);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  .modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .modal-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+  }
+  
+  .modal-btn.yes {
+    background: var(--accent);
+    color: white;
+  }
+  
+  .modal-btn.no {
+    background: #fff;
+    color: var(--accent);
+    border: 1px solid rgba(184,134,11,0.12);
+  }
+
+  /* Sticker */
+  .sticker {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1500;
+    max-width: 300px;
+    width: 80%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  @media(max-width:780px){
+    .photo-box{
+      width: 100%;
+      height: 300px;
+      max-width: 400px;
+    }
+    
+    .info-content {
+      font-size: 18px;
+    }
+    
+    .invite-line {
+      font-size: 22px;
+    }
+    
+    .hero-hero {
+      height: 300px;
+    }
+    
+    .names-container {
+      font-size: 22px;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <div class="open-screen" id="openScreen">
+      <div>
+        <div class="open-title">We got married</div>
+        <button class="open-btn" id="openBtn">💌 Mở Thiệp</button>
+      </div>
+    </div>
+
+    <div id="main" style="display:none">
+      <div class="hero scroll-animate">
+        <div class="hero-hero">
+          <img src="https://i.ibb.co/JWL3x5F2/main-photo.jpg" alt="Ảnh cưới Mia & An" onerror="this.src='https://via.placeholder.com/800x500/fff7f0/b8860b?text=Mia+%26+An'">
+        </div>
+        <h1 class="big">Lễ Vu Quy</h1>
+      </div>
+
+      <div class="info scroll-animate right">
+        <div class="names-wrapper">
+          <div class="names-container">
+            <span>Nguyễn Thị Huyền</span>
+            <span class="names-separator">&</span>
+            <span>An Kim Hổ</span>
+          </div>
+          <div class="names-container" style="font-size:20px;margin-top:0">
+            <span>(Mia)</span>
+            <span class="names-separator">&</span>
+            <span>(An)</span>
+          </div>
+        </div>
+        <div class="info-content">
+          Được tổ chức vào lúc <span class="highlight">8 giờ 15 phút, chủ nhật ngày 14 tháng 12 năm 2025</span><br>
+          <span class="lunar-date">(Tức ngày 25 tháng 10 năm Ất Tỵ)</span><br>
+          TẠI TƯ GIA NHÀ GÁI<br>
+          <span style="font-size: 18px;">(Xóm Vinh Tây, Khu phố Lạc Thổ Nam, Phường Thuận Thành, Tỉnh Bắc Ninh)</span>
+        </div>
+        
+        <div class="map-container">
+          <a href="https://www.google.com/maps/place/21%C2%B003'38.3%22N+106%C2%B005'23.3%22E/@21.0606389,106.0872307,17z/data=!3m1!4b1!4m7!1m2!10m1!1e2!3m3!8m2!3d21.0606389!4d106.0898056?entry=ttu&g_ep=EgoyMDI1MTEwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Xem bản đồ</a>
+        </div>
+      </div>
+
+      <div class="stagger scroll-animate">
+        <div class="photo-box">
+          <img src="https://i.ibb.co/9mQWCCsz/album3.jpg" alt="Ảnh cưới Mia & An" onerror="this.src='https://via.placeholder.com/700x500/fff7f0/b8860b?text=Album+3'">
+        </div>
+      </div>
+      
+      <div class="invite-line scroll-animate">Rất hân hạnh được đón tiếp</div>
+
+      <div class="families scroll-animate right">
+        <div class="side">
+          <h4>Nhà trai</h4>
+          <p>Bố: An Tồn Nghĩa<br/>Mẹ: Cát Hoán Cầm</p>
+        </div>
+        <div class="side">
+          <h4>Nhà gái</h4>
+          <p>Bố: Nguyễn Huy Chính<br/>Mẹ: Dương Thị Lý</p>
+        </div>
+      </div>
+
+      <div class="announce scroll-animate">
+        <div>TRÂN TRỌNG KÍNH MỜI</div>
+        <div style="font-size:20px;font-weight:700;margin-top:6px">......................</div>
+        <div class="meta" style="margin-top:6px">đến dự bữa cơm thân mật chung vui cùng gia đình chúng tôi</div>
+        <div class="announce-time">vào lúc <span class="highlight">15 giờ ngày 14 tháng 12 năm 2025</span> <span class="lunar-date">(tức ngày 25 tháng 10 năm Ất Tỵ)</span></div>
+      </div>
+
+      <div class="calendar scroll-animate right">
+        <div class="calendar-title">Tháng 12/2025</div>
+        <div class="weekdays">
+          <div class="weekday">CN</div>
+          <div class="weekday">T2</div>
+          <div class="weekday">T3</div>
+          <div class="weekday">T4</div>
+          <div class="weekday">T5</div>
+          <div class="weekday">T6</div>
+          <div class="weekday">T7</div>
+        </div>
+        <div class="grid" id="calGrid"></div>
+      </div>
+
+      <div class="rsvp scroll-animate">
+        <div style="font-weight:700">Bạn sẽ đến tham dự chứ?</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;justify-content:center">
+          <button class="btn" id="yesBtn">Chắc chắn rồi</button>
+          <button class="btn no" id="noBtn">E là không thể</button>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <div class="gallery-item scroll-animate">
+          <img src="https://i.ibb.co/ksVZ7Xmb/7.jpg" alt="Ảnh cưới Mia & An" onerror="this.src='https://via.placeholder.com/800x280/fff7f0/b8860b?text=Gallery+1'">
+        </div>
+        <div class="gallery-item scroll-animate right">
+          <img src="https://i.ibb.co/yFHzpdFt/album2.jpg" alt="Ảnh cưới Mia & An" onerror="this.src='https://via.placeholder.com/800x280/fff7f0/b8860b?text=Gallery+2'">
+        </div>
+        <div class="gallery-item scroll-animate">
+          <img src="https://i.ibb.co/67DWQmXz/album1.jpg" alt="Ảnh cưới Mia & An" onerror="this.src='https://via.placeholder.com/800x280/fff7f0/b8860b?text=Gallery+3'">
+        </div>
+        <div class="gallery-item scroll-animate right">
+          <img src="https://i.ibb.co/nTTKwcL/9.jpg" alt="Ảnh cưới Mia & An" onerror="this.src='https://via.placeholder.com/800x280/fff7f0/b8860b?text=Gallery+4'">
+        </div>
+      </div>
+      
+      <footer class="scroll-animate">
+        <div style="font-family:'Great Vibes',cursive;font-size:28px;color:var(--accent);text-align:center">Thank you</div>
+      </footer>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for "E là không thể" -->
+<div class="modal" id="noModal">
+  <div class="modal-content">
+    <p style="font-size:18px;margin-bottom:20px;">Mình sẽ buồn lắm đấy :((</p>
+    <div class="modal-buttons">
+      <button class="modal-btn yes" id="modalYes">Tôi sẽ tham gia</button>
+      <button class="modal-btn no" id="modalNo">Tôi không thể tham gia</button>
+    </div>
+  </div>
+</div>
+
+<!-- Sticker for "Chắc chắn rồi" -->
+<img src="https://i.pinimg.com/originals/17/a9/46/17a946921da91360e395d666e9813258.gif" alt="Sticker" class="sticker" id="sticker">
+
+<div class="hearts" id="hearts"></div>
+
+<script>
+// Khởi tạo khi trang load
+document.addEventListener('DOMContentLoaded', function() {
+  // handle open
+  const openBtn = document.getElementById('openBtn');
+  const main = document.getElementById('main');
+  const openScreen = document.getElementById('openScreen');
+  
+  if (openBtn) {
+    openBtn.addEventListener('click', function(){
+      openScreen.style.display = 'none';
+      main.style.display = 'block';
+      startHearts();
+      generateCalendar(2025,12,14);
+      initScrollAnimations();
+    });
+  }
+
+  // Xử lý nút RSVP
+  const yesBtn = document.getElementById('yesBtn');
+  const noBtn = document.getElementById('noBtn');
+  const sticker = document.getElementById('sticker');
+  const noModal = document.getElementById('noModal');
+  const modalYes = document.getElementById('modalYes');
+  const modalNo = document.getElementById('modalNo');
+
+  if (yesBtn) {
+    yesBtn.addEventListener('click', function() {
+      // Hiển thị sticker
+      if (sticker) {
+        sticker.style.display = 'block';
+        
+        // Thêm vào danh sách khách mời
+        addGuest(true);
+        
+        // Ẩn sticker sau 3 giây
+        setTimeout(function() {
+          sticker.style.display = 'none';
+        }, 3000);
+      }
+    });
+  }
+
+  if (noBtn) {
+    noBtn.addEventListener('click', function() {
+      // Hiển thị modal
+      if (noModal) {
+        noModal.style.display = 'flex';
+      }
+    });
+  }
+
+  if (modalYes) {
+    modalYes.addEventListener('click', function() {
+      // Thêm vào danh sách khách mời
+      addGuest(true);
+      if (noModal) noModal.style.display = 'none';
+    });
+  }
+
+  if (modalNo) {
+    modalNo.addEventListener('click', function() {
+      // Thêm vào danh sách không tham gia
+      addGuest(false);
+      if (noModal) noModal.style.display = 'none';
+    });
+  }
+
+  // Đóng modal khi click bên ngoài
+  window.addEventListener('click', function(e) {
+    if (e.target === noModal) {
+      noModal.style.display = 'none';
+    }
+  });
+});
+
+function startHearts(){
+  const container = document.getElementById('hearts');
+  if (!container) return;
+  
+  const heartIcons = ['❤', '❤', '❤', '❤', '❤'];
+  
+  for(let i = 0; i < 75; i++){
+    const h = document.createElement('div');
+    h.className = 'heart';
+    h.innerHTML = heartIcons[Math.floor(Math.random() * heartIcons.length)];
+    h.style.left = Math.random() * 100 + '%';
+    h.style.top = '100%';
+    h.style.opacity = 0.6 + Math.random() * 0.4;
+    h.style.color = `hsl(0, ${70 + Math.random() * 30}%, ${50 + Math.random() * 30}%)`;
+    
+    const size = 12 + Math.random() * 12;
+    h.style.fontSize = size + 'px';
+    
+    const duration = 6000 + Math.random() * 8000;
+    
+    container.appendChild(h);
+    
+    const animation = h.animate([
+      { 
+        transform: `translate(0, 0) rotate(0deg)`, 
+        opacity: h.style.opacity 
+      },
+      { 
+        transform: `translate(${(Math.random()-0.5)*100}px, -100vh) rotate(${360 + Math.random()*360}deg)`, 
+        opacity: 0 
+      }
+    ], { 
+      duration: duration, 
+      easing: 'cubic-bezier(0.2, 0.8, 0.3, 1)' 
+    });
+    
+    setTimeout(function() {
+      if(h.parentNode) h.parentNode.removeChild(h);
+    }, duration);
+  }
+}
+
+// Lịch với trái tim
+function generateCalendar(y, m, day){
+  const grid = document.getElementById('calGrid');
+  if (!grid) return;
+  
+  grid.innerHTML = '';
+  const first = new Date(y, m-1, 1);
+  const start = first.getDay(); // 0=Sun
+  
+  // add empty
+  for(let i = 0; i < start; i++){ 
+    const e = document.createElement('div'); 
+    e.className = 'cell'; 
+    grid.appendChild(e); 
+  }
+  
+  const last = new Date(y, m, 0).getDate();
+  for(let d = 1; d <= last; d++){
+    const c = document.createElement('div'); 
+    c.className = 'cell'; 
+    c.textContent = d;
+    if(d === day){ 
+      c.classList.add('heart'); 
+      c.innerHTML = '<span style="visibility:hidden">14</span>';
+    }
+    grid.appendChild(c);
+  }
+}
+
+// Hiệu ứng scroll
+function initScrollAnimations() {
+  function checkScroll() {
+    const scrollElements = document.querySelectorAll('.scroll-animate');
+    
+    scrollElements.forEach(function(element) {
+      const elementTop = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      if (elementTop < windowHeight - 100) {
+        element.classList.add('visible');
+      }
+    });
+  }
+
+  // Chạy ngay và khi scroll
+  checkScroll();
+  window.addEventListener('scroll', checkScroll);
+}
+
+// Hàm thêm khách mời vào danh sách
+function addGuest(isAttending) {
+  // Trong thực tế, bạn sẽ gửi dữ liệu này đến server
+  const guestId = 'guest_' + Date.now();
+  
+  // Lấy danh sách hiện tại từ localStorage
+  let guestList = {
+    attending: [],
+    notAttending: []
+  };
+  
+  try {
+    const saved = localStorage.getItem('weddingGuestList');
+    if (saved) {
+      guestList = JSON.parse(saved);
+    }
+  } catch (e) {
+    console.log('Không thể đọc dữ liệu từ localStorage');
+  }
+  
+  if (isAttending) {
+    guestList.attending.push(guestId);
+    console.log('Khách mới đã xác nhận tham gia:', guestId);
+    alert('Cảm ơn bạn đã xác nhận tham dự! 💕');
+  } else {
+    guestList.notAttending.push(guestId);
+    console.log('Khách mới không thể tham gia:', guestId);
+    alert('Rất tiếc vì bạn không thể tham dự! 😔');
+  }
+  
+  // Lưu vào localStorage
+  try {
+    localStorage.setItem('weddingGuestList', JSON.stringify(guestList));
+  } catch (e) {
+    console.log('Không thể lưu dữ liệu vào localStorage');
+  }
+}
+</script>
+</body>
+</html>
