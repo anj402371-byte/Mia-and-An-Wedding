@@ -398,6 +398,14 @@
 <div class="hearts" id="hearts"></div>
 
 <script>
+  // THÊM PHẦN NÀY ĐẦU TIÊN TRONG THẺ <script>
+window.addEventListener('error', function(e) {
+    console.log('JavaScript Error:', e.error);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Page loaded successfully');
+});
 // Khởi tạo khi trang load
 document.addEventListener('DOMContentLoaded', function() {
   // handle open
@@ -603,4 +611,5 @@ function addGuest(isAttending) {
 }
 </script>
 </body>
+
 </html>
